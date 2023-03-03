@@ -26,13 +26,14 @@ export default async function Page() {
   return (
     <div className="w-full h-screen pr-6 overflow-y-auto">
       <div className=" h-full  items-stretch justify-center min-h-[content]">
-        <div className="flex grow">
+        {/*<div className="flex grow">
           <Header />
         </div>
+        */}
         <div className="flex flex-wrap items-center justify-center mt-3 -m-3 flex-3 h-content grow">
           {cards.map((card) => (
             <Link href={card.link} key={card.link}>
-              <Card className="flex flex-col items-center justify-center w-64 h-64 m-3 bg-slate-100 hover:bg-slate-600 hover:text-white transition duration-200">
+              <Card className="flex flex-col items-center justify-center w-64 h-64 m-3 bg-slate-100 hover:scale-105 transition duration-200">
                 <h2 className="text-3xl font-bold">{card.title}</h2>
               </Card>
             </Link>
