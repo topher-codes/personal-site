@@ -11,7 +11,15 @@
 * {
   box-sizing: border-box;
 }
-
+.dark-mesh {
+  background: radial-gradient(
+    circle at 100%,
+    #333,
+    #333 50%,
+    #eee 75%,
+    #333 75%
+  );
+}
 .rainbow-mesh {
   background-color: hsla(0, 100%, 50%, 1);
   background-image: radial-gradient(

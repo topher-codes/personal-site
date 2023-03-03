@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { Settings, User, Grid, Calendar } from "react-feather";
+import { Code, User, Grid, FileText } from "react-feather";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-const icons = { Settings, User, Grid, Calendar };
+const icons = { Code, User, Grid, FileText };
 
 const SidebarLink = ({ link }) => {
   const pathname = usePathname();
@@ -16,12 +16,12 @@ const SidebarLink = ({ link }) => {
 
   const Icon = icons[link.icon];
   return (
-    <Link href={link.link} className="w-full flex justify-center items-center">
+    <Link href={link.link} className="flex items-center justify-center w-full">
       <Icon
         size={40}
         className={clsx(
-          "stroke-gray-400 hover:stroke-violet-600 transition duration-200 ease-in-out",
-          isActive && "stroke-violet-600"
+          "stroke-gray-400 hover:stroke-slate-600 transition duration-200 ease-in-out",
+          isActive && "stroke-slate-600"
         )}
       />
     </Link>

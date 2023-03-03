@@ -3,25 +3,25 @@ import Image from "next/image";
 import SidebarLink from "./SidebarLink";
 
 const links = [
-  { label: "Home", icon: "Grid", link: "/home" },
+  { label: "Home", icon: "Grid", link: "/" },
   {
-    label: "Calendar",
-    icon: "Calendar",
-    link: "/calendar",
+    label: "Blog",
+    icon: "FileText",
+    link: "/blog",
   },
-  { label: "Profile", icon: "User", link: "/profile" },
+  { label: "About", icon: "User", link: "/about" },
   {
-    label: "Settings",
-    icon: "Settings",
-    link: "/settings",
+    label: "Projects",
+    icon: "Code",
+    link: "/projects",
   },
 ];
 
 const Sidebar = () => {
   return (
-    <Card className="h-full w-40 flex items-center justify-between flex-wrap">
+    <Card className="flex flex-wrap items-center justify-between w-40 h-full">
       {
-        // <div className="w-full flex justify-center items-center">
+        // <div className="flex items-center justify-center w-full">
         //<Image src={logo} alt="Able logo" priority className="w-14" />
         //</div>
       }
