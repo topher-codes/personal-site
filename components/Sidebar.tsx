@@ -19,7 +19,7 @@ const links = [
 
 const Sidebar = () => {
   return (
-    <Card className="flex flex-wrap items-center justify-between w-40 h-full">
+    <Card className="flex flex-wrap items-center justify-between w-40 h-full bg-slate-100">
       {
         // <div className="flex items-center justify-center w-full">
         //<Image src={logo} alt="Able logo" priority className="w-14" />
