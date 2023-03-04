@@ -9,15 +9,10 @@ export default function DashboardRootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="w-screen h-screen candy-mesh">
+      <body className="w-screen h-screen p-6 candy-mesh">
         <GlassPane className="flex items-center w-full h-full ">
           <Sidebar />
-          <div className=" w-full h-full  items-stretch justify-center min-h-[content]">
-            <div className="flex flex-grow">
-              <Header />
-            </div>
-            {children}
-          </div>
+          {children}
         </GlassPane>
         <div id="modal" />
       </body>
