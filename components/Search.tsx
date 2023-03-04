@@ -3,20 +3,17 @@ import Input from "./Input";
 import Button from "./Button";
 import { XSquare } from "react-feather";
 
-const Search = () => {
-  const handleClick = () => {
-    console.log("clicked");
-  };
+const Search = ({ handleClick }) => {
   return (
-    <Card className="flex flex-col items-center justify-center w-full h-full bg-slate-100">
+    <div className="flex flex-col items-center justify-center w-full h-full ">
       <div className="flex flex-row justify-between items-between">
         <h1 className="text-4xl font-bold">Search</h1>
-        <Button className="" size="small" onClick={handleClick}>
-          <XSquare />
-        </Button>
+        <div className="hover:scale-105 hover:cursor-pointer">
+          <XSquare onClick={handleClick} />
+        </div>
       </div>
       <Input className="" />
-    </Card>
+    </div>
   );
 };
 

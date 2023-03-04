@@ -1,5 +1,11 @@
+import Resume from "../posts/resume.mdx";
+
 const AboutPage = () => {
-  return <div>About Page</div>;
+  return (
+    <div className="w-full h-full p-6 bg-slate-100">
+      <Resume />
+    </div>
+  );
 };
 
 export default AboutPage;

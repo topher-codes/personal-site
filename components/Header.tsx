@@ -25,7 +25,7 @@ const Header = () => {
             <Search />{" "}
           </Button>
         ) : (
-          <SearchBar />
+          <SearchBar handleClick={handleClick} />
         )}
       </div>
     </Card>
