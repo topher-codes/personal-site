@@ -1,14 +1,12 @@
 "use client";
 import { useState } from "react";
 import Modal from "react-modal";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+import Button from "./Button";
 
 Modal.setAppElement("#modal");
 
-const BlogModal = ({ content }) => {
+const BlogModal = ({ children }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const source = serialize(content);
   function openModal() {
     setIsOpen(true);
   }
@@ -19,14 +17,19 @@ const BlogModal = ({ content }) => {
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <div className="flex flex-col items-center justify-center w-full h-full">
+        <Button onClick={openModal} size="small">
+          Read More
+        </Button>
+      </div>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        className="w-1/2 p-6 m-auto bg-white h-1/2"
-        overlayClassName="w-full h-full p-6 m-auto bg-black bg-opacity-50"
+        overlayClassName="bg-[rgba(0,0,0,.4)] flex justify-center items-center absolute top-0 left-0 h-screen w-screen"
+        className="w-3/4 p-8 bg-white rounded-xl"
       >
-        <MDXRemote {...source} />
+        <h2>Modal Title</h2>
+        <div>{children}</div>
       </Modal>
     </div>
   );
