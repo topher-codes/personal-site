@@ -5,7 +5,9 @@ import Header from "@/components/Header";
 
 export default function DashboardRootLayout({
   children,
-}: React.PropsWithChildren<{}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head />
