@@ -1,4 +1,4 @@
-import Resume from "../posts/resume.mdx";
+import Resume from "../../posts/resume.mdx";
 
 const AboutPage = () => {
   return (

@@ -26,9 +26,6 @@ export default async function Page() {
   return (
     <div className="w-full h-full pr-6 overflow-y-auto">
       <div className=" items-stretch justify-center min-h-[content]">
-        <div className="flex grow">
-          <Header />
-        </div>
         <div className="flex flex-wrap items-center justify-center mt-3 -m-3 flex-3 h-content grow">
           {cards.map((card) => (
             <Link href={card.link} key={card.link}>
