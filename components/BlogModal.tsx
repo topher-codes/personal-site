@@ -5,7 +5,7 @@ import Button from "./Button";
 
 Modal.setAppElement("#modal");
 
-const BlogModal = ({ children }) => {
+const BlogModal = ({ children }: { children: React.ReactNode }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
