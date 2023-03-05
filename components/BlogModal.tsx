@@ -4,6 +4,8 @@ import Modal from "react-modal";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
+Modal.setAppElement("#modal");
+
 const BlogModal = ({ content }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const source = serialize(content);
