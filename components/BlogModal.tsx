@@ -25,8 +25,8 @@ const BlogModal = ({ children }: { children: React.ReactNode }) => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        overlayClassName="bg-[rgba(0,0,0,.4)] flex justify-center items-center absolute top-0 left-0 h-screen w-screen"
-        className="w-3/4 p-8 bg-white rounded-xl"
+        overlayClassName="bg-[rgba(0,0,0,.4)] flex justify-center items-center absolute top-0 left-0 h-screen w-screen overflow-y-auto"
+        className="w-3/4 p-8 overflow-y-auto bg-white rounded-xl"
       >
         <h2>Modal Title</h2>
         <div>{children}</div>
