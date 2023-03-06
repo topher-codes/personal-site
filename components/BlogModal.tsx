@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import Button from "./Button";
-
+import { MDXRemote } from "next-mdx-remote/rsc";
 Modal.setAppElement("#modal");
 
 const BlogModal = ({ children }: { children: React.ReactNode }) => {
@@ -28,8 +28,7 @@ const BlogModal = ({ children }: { children: React.ReactNode }) => {
         overlayClassName="bg-[rgba(0,0,0,.4)] flex justify-center items-center absolute top-0 left-0 h-screen w-screen overflow-y-auto"
         className="w-3/4 p-8 overflow-y-auto bg-white rounded-xl"
       >
-        <h2>Modal Title</h2>
-        <div>{children}</div>
+        {children}
       </Modal>
     </div>
   );

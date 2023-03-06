@@ -9,7 +9,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-const BlogPage = () => {
+const BlogPage = async () => {
   const posts = fs.readdirSync(path.join("posts")).map((filename) => {
     const slug = filename.replace(".mdx", "");
     const markdownWithMeta = fs.readFileSync(
