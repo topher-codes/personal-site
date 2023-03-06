@@ -29,13 +29,11 @@ const BlogPage = () => {
       <h1 className="py-6 text-4xl font-bold">Blog</h1>
       {posts.map((post) => (
         <Card key={post.slug} className="w-1/2 p-6 m-6">
-          <Link href={`/blog/${post.slug}`}>
-            <p className="text-3xl font-bold text-slate-600">
-              {post.frontmatter.title}
-            </p>
-            <p className="py-4">{post.frontmatter.description}</p>
-            <p>{post.frontmatter.publishedAt}</p>
-          </Link>
+          <p className="text-3xl font-bold text-slate-600">
+            {post.frontmatter.title}
+          </p>
+          <p className="py-4">{post.frontmatter.description}</p>
+          <p>{post.frontmatter.publishedAt}</p>
           <BlogModal>{post.content}</BlogModal>
         </Card>
       ))}
