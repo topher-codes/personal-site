@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
+import ContactModal from "@/components/ContactModal";
 
 export default async function Page() {
   const cards = [
@@ -34,6 +35,9 @@ export default async function Page() {
               </Card>
             </Link>
           ))}
+        </div>
+        <div className="flex flex-col items-center justify-center flex-1 mt-6 grow">
+          <ContactModal />
         </div>
         <div className="flex w-full mt-6 flex-2 grow">
           <div className="w-full px-20">{/*<Search /> */}</div>
