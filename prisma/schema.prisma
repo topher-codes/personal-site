@@ -18,4 +18,19 @@ model Post {
   content   String?
   published Boolean  @default(false)
   description String?
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  String
+
+  @@index([authorId])
+}
+
+model User {
+  id        String      @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String   @unique
+  firstName      String
+  lastName      String
+  password      String
+  posts     Post[]
 }

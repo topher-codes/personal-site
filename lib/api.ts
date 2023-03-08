@@ -26,3 +26,12 @@ export async function searchBlogPosts(searchTerm: string) {
   });
   return results;
 }
+
+export async function signIn(email: string, password: string) {
+  const results = await fetcher({
+    url: "/api/signin",
+    method: "POST",
+    body: { email, password },
+  });
+  return results;
+}
