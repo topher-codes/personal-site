@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { serialize } from "next-mdx-remote/serialize";
 import BlogPost from "@/components/BlogPost";
+
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("posts"));
   return files.map((filename) => {
