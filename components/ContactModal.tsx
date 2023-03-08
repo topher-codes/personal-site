@@ -2,6 +2,8 @@
 import Modal from "react-modal";
 import { useState } from "react";
 import Button from "./Button";
+import Link from "next/link";
+import { Twitter, Mail, GitHub } from "react-feather";
 
 Modal.setAppElement("#modal");
 
@@ -26,19 +28,27 @@ const ContactModal = () => {
         overlayClassName="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
       >
         <h1 className="text-3xl font-bold">Contact</h1>
-        <p className="py-4">
-          If you'd like to get in touch with me, you can email me at{" "}
-          <a
-            href="mailto:
-          "
-            className="text-blue-500 hover:underline"
-          >
-            andrewsc33@icloud.com
-          </a>
+        <p className="py-2">
+          <Button>
+            <Link href="mailto:andrewsc33@icloud.com">
+              <Mail />
+            </Link>
+          </Button>
         </p>
-        <Button size="small" onClick={closeModal}>
-          Close
-        </Button>
+        <p className="py-2">
+          <Button>
+            <Link href="https://twitter.com/503dev?ref_src=twsrc%5Etfw">
+              <Twitter />
+            </Link>
+          </Button>
+        </p>
+        <p className="py-2">
+          <Button>
+            <Link href="https://github.com/topher-codes">
+              <GitHub />
+            </Link>
+          </Button>
+        </p>
       </Modal>
     </>
   );
