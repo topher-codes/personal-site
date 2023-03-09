@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.2.3",
     "@prisma/client": "4.6.1",
     "@types/mdx": "^2.0.3",
