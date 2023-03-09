@@ -6,7 +6,7 @@ import SearchBar from "./Search";
 import { Search } from "react-feather";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ posts }) => {
   const [pressed, setPressed] = useState(false);
 
   const handleClick = () => {
@@ -25,7 +25,7 @@ const Header = () => {
             <Search />{" "}
           </Button>
         ) : (
-          <SearchBar handleClick={handleClick} />
+          <SearchBar handleClick={handleClick} posts={posts} />
         )}
       </div>
     </Card>

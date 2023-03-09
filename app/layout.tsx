@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import "@/styles/global.css";
 import GlassPane from "@/components/GlassPane";
 import Sidebar from "@/components/Sidebar";
@@ -8,6 +11,19 @@ export default function DashboardRootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const posts = fs.readdirSync(path.join("posts")).map((filename) => {
+    const slug = filename.replace(".mdx", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+
   return (
     <html lang="en">
       <head />
@@ -16,7 +32,7 @@ export default function DashboardRootLayout({
           <Sidebar />
           <div className="flex flex-col items-center w-full h-full">
             <div className="flex flex-row items-center w-full ">
-              <Header />
+              <Header posts={posts} />
             </div>
             {children}
           </div>

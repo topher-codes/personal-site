@@ -4,8 +4,10 @@ import Input from "./Input";
 import Button from "./Button";
 import { XSquare } from "react-feather";
 import { useState, useEffect } from "react";
+import SearchLookup from "./SearchLookup";
+import { getPostBySearch } from "@/lib/api";
 
-const Search = ({ handleClick }) => {
+const Search = ({ handleClick, posts }) => {
   const [input, setInput] = useState("");
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -19,7 +21,27 @@ const Search = ({ handleClick }) => {
           <XSquare onClick={handleClick} />
         </div>
       </div>
-      <Input className="" value={input} onChange={handleChange} />
+      <div className="flex flex-col items-center justify-center w-full h-full overflow-y-auto">
+        <Input className="" value={input} onChange={handleChange} />
+      </div>
+      <div className="absolute top-20">
+        {input !== "" &&
+          posts
+            .filter(
+              (post) =>
+                post.frontmatter.title.toLowerCase().includes(input) ||
+                post.frontmatter.description.toLowerCase().includes(input)
+            )
+            .map((post) => (
+              <Card
+                key={post.slug}
+                className="flex flex-col border-2 border-bg-black"
+              >
+                <div>{post.frontmatter.title}</div>
+                <div>{post.frontmatter.description}</div>
+              </Card>
+            ))}
+      </div>
     </div>
   );
 };

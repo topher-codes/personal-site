@@ -18,11 +18,9 @@ const BlogPage = async () => {
       "utf-8"
     );
     const { data: frontmatter } = matter(markdownWithMeta);
-    const content = markdownWithMeta;
     return {
       slug,
       frontmatter,
-      content,
     };
   });
 
@@ -38,7 +36,7 @@ const BlogPage = async () => {
           <p>{post.frontmatter.publishedAt}</p>
           <Link
             href={`/blog/${post.slug}`}
-            className="flex flex-col w-full items-center"
+            className="flex flex-col items-center w-full"
           >
             <Button size="small">Read More</Button>
           </Link>
