@@ -6,6 +6,7 @@ import { XSquare } from "react-feather";
 import { useState, useEffect } from "react";
 import SearchLookup from "./SearchLookup";
 import { getPostBySearch } from "@/lib/api";
+import Link from "next/link";
 
 const Search = ({ handleClick, posts }) => {
   const [input, setInput] = useState("");
@@ -33,13 +34,12 @@ const Search = ({ handleClick, posts }) => {
                 post.frontmatter.description.toLowerCase().includes(input)
             )
             .map((post) => (
-              <Card
-                key={post.slug}
-                className="flex flex-col border-2 border-bg-black"
-              >
-                <div>{post.frontmatter.title}</div>
-                <div>{post.frontmatter.description}</div>
-              </Card>
+              <Link href={`/blog/${post.slug}`} onClick={() => setInput("")}>
+                <Card className="flex flex-col border-2 border-bg-black">
+                  <div>{post.frontmatter.title}</div>
+                  <div>{post.frontmatter.description}</div>
+                </Card>
+              </Link>
             ))}
       </div>
     </div>
