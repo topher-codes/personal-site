@@ -29,6 +29,9 @@ const components = {
   td: (props) => <td className="p-4" {...props} />,
   img: (props) => <img className="p-4" {...props} />,
   inlineCode: (props) => <code className="bg-gray-200" {...props} />,
+  div: (props) => (
+    <div className="p-4 w-full flex flex-col items-center" {...props} />
+  ),
 };
 
 const BlogPost = ({ source }) => {
