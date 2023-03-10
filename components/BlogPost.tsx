@@ -4,10 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 
 const components = {
   h1: (props) => (
-    <h1
-      className="w-full py-6 text-4xl text-center text-white bg-gradient-to-r from-blue-400 to-purple-500"
-      {...props}
-    />
+    <h1 className="w-full py-6 text-4xl text-center " {...props} />
   ),
   h2: (props) => <h2 className="text-2xl" {...props} />,
   h3: (props) => <h3 className="text-xl" {...props} />,
@@ -30,7 +27,7 @@ const components = {
   img: (props) => <img className="p-4" {...props} />,
   inlineCode: (props) => <code className="bg-gray-200" {...props} />,
   div: (props) => (
-    <div className="p-4 w-full flex flex-col items-center" {...props} />
+    <div className="flex flex-col items-center w-full p-4" {...props} />
   ),
 };
 

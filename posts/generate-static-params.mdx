@@ -1,0 +1,40 @@
+---
+title: "generateStaticParams()"
+description: "A new way to fetch static props in next? I'll explain why this was frustrating at first"
+publishedAt: "2023-03-10"
+---
+
+# A new way to generate static props?
+
+<p>
+  Yes.
+</p>
+
+<p> 
+  So if you are coming from Next 12 you are used to `getStaticProps()` which is all fine and wonderful.
+  Now there's a replacement when using the `app` directory, called `generateStaticParams`
+  </p>
+
+  <p>
+    Here's what it looks like.
+
+  </p>
+
+  <p>
+    ```typescript
+    export async function generateStaticParams() {
+  const files = fs.readdirSync(path.join("posts"));
+  return files.map((filename) => {
+    return {
+      slug: filename.replace(".mdx", ""),
+    };
+  });
+}
+    ```
+  </p>
+<p>
+  Basically the only thing that has changed is that we are returning the params, in this case `slug`, when before we were returning an object `props: {prop: value}`.
+  Pretty cool? I guess.  This is actually the version of Next I'm using to run this blog... (I know, why use a framework like Next to deliver static pages, more on that later)
+
+</p>
+

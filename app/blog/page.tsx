@@ -24,6 +24,13 @@ const BlogPage = async () => {
     };
   });
 
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   return (
     <div className="flex flex-col items-center w-full h-full overflow-y-auto">
       <h1 className="py-6 text-4xl font-bold">Blog</h1>
@@ -39,7 +46,11 @@ const BlogPage = async () => {
               {post.frontmatter.title}
             </p>
             <p className="py-4">{post.frontmatter.description}</p>
-            <p>{post.frontmatter.publishedAt}</p>
+            <p className="text-sm text-slate-400">
+              {new Date(post.frontmatter.publishedAt).toLocaleDateString(
+                options
+              )}
+            </p>
             <Link
               href={`/blog/${post.slug}`}
               className="flex flex-col items-center w-full"
