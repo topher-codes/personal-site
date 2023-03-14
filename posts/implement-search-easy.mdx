@@ -1,0 +1,80 @@
+---
+title: "Search"
+description: "How I implemented search easily"
+publishedAt: "2023-03-14"
+---
+
+# Search, Easy
+
+<p>
+ Search can be a pain point for a lot of developers. Luckily for me, I'm using Node.js and my blog posts are .mdx
+ files on the filesystem. This makes it quite easy to parse the files using node and return all of the content, and then filter that
+ content based on the user's input. Here's what it looks like in just a few lines of code.
+</p>
+
+## First, we gotta grab the directory from path and read the contents. 
+
+```typescript
+const posts = fs.readdirSync(path.join("posts")).map((filename) => {
+  // We will loop through all the files in the directory 
+  //and pull the filename for "slug" and the content
+}
+
+```
+
+## The next step
+
+```typescript
+const posts = fs.readdirSync(path.join("posts")).map((filename) => {
+  const slug = filename.replace(".mdx", "");
+  const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+      );
+  const { data: frontmatter } = matter(markdownWithMeta);
+  return {
+  slug,
+  frontmatter,
+  };
+  });
+
+```
+
+## Now that we have the frontmatter and slug, we can pass that down
+
+```typescript
+{input !== "" &&
+  posts
+    .filter(
+        (post) =>
+        post.frontmatter.title.toLowerCase().includes(input.toLowerCase()) ||
+        post.frontmatter.description.toLowerCase().includes(input.toLowerCase())
+        )
+    .map((post) => (
+          <Link href={`/blog/${post.slug}`} onClick={() => setInput("")}>
+          <Card className="flex flex-col border-2 border-bg-black">
+          <div>{post.frontmatter.title}</div>
+          <div>{post.frontmatter.description}</div>
+          </Card>
+          </Link>
+          ))}
+
+```
+
+<p>
+  Here we are just looping through the posts object, filtering each post to see if it includes the user search input.
+  We change both the input and the data to lowercase using a string method, so that it's not case sensitive. 
+  Then we display the results in a link. Pretty simple right?
+</p>
+
+<p>
+  It's pretty cool that Javascript gives us the ability to implement search algorithms so easily. Without the `filter`
+  and `includes` method, we would have to write a LOT of complicated code. It will all be nested with `if..` statements 
+  but thanks to `map` we don't need to worry about that. 
+</p>
+
+<p>
+  With all that said, I would still recommend learning the algorithms, and trying to implement them manually, on a simple
+  test project. It's very useful to know what's going on under the hood. Javascript makes programming considerably easier (most of the
+  time), but knowing what's going on under the hood allows you to solve your problem in the most practical and efficient way. 
+</p>

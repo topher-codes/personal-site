@@ -27,7 +27,7 @@ export default function DashboardRootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="w-screen h-screen lg:p-6 candy-mesh">
+      <body className="w-screen h-screen lg:p-6 dark-mesh">
         <GlassPane className="flex items-center w-full h-full ">
           <Sidebar className="max-md:hidden" />
           <div className="flex flex-col items-center w-full h-full">
