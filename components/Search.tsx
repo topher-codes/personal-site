@@ -1,11 +1,8 @@
 "use client";
 import Card from "./Card";
 import Input from "./Input";
-import Button from "./Button";
 import { XSquare } from "react-feather";
-import { useState, useEffect } from "react";
-import SearchLookup from "./SearchLookup";
-import { getPostBySearch } from "@/lib/api";
+import { useState, } from "react";
 import Link from "next/link";
 
 const Search = ({ handleClick, posts }) => {
@@ -17,13 +14,13 @@ const Search = ({ handleClick, posts }) => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full ">
       <div className="flex flex-row justify-between items-between">
-        <h1 className="text-4xl font-bold">Search</h1>
-        <div className="hover:scale-105 hover:cursor-pointer">
-          <XSquare onClick={handleClick} />
+        <h1 className="text-sm lg:text-3xl font-bold">Search</h1>
+        <div className="hover:scale-105 text-sm hover:cursor-pointer ">
+          <XSquare size={10} onClick={handleClick} />
         </div>
       </div>
       <div className="flex flex-col items-center justify-center w-full h-full overflow-y-auto">
-        <Input className="" value={input} onChange={handleChange} />
+        <Input className="text-lg lg:text-2xl" value={input} onChange={handleChange} />
       </div>
       <div className="absolute top-20">
         {input !== "" &&

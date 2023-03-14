@@ -1,5 +1,5 @@
+import clsx from "clsx"; 
 import Card from "./Card";
-import Image from "next/image";
 import SidebarLink from "./SidebarLink";
 
 const links = [
@@ -17,9 +17,9 @@ const links = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({className}) => {
   return (
-    <Card className="flex flex-wrap items-center justify-between w-40 h-full bg-slate-100">
+    <Card className={clsx("flex flex-wrap items-center justify-between w-40 h-full bg-slate-100", className)}>
       {
         // <div className="flex items-center justify-center w-full">
         //<Image src={logo} alt="Able logo" priority className="w-14" />

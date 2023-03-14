@@ -29,7 +29,7 @@ export default function DashboardRootLayout({
       <head />
       <body className="w-screen h-screen p-6 candy-mesh">
         <GlassPane className="flex items-center w-full h-full ">
-          <Sidebar />
+          <Sidebar className="max-md:hidden" />
           <div className="flex flex-col items-center w-full h-full">
             <div className="flex flex-row items-center w-full ">
               <Header posts={posts} />

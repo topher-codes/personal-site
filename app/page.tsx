@@ -1,8 +1,6 @@
 import Card from "@/components/Card";
 import Link from "next/link";
 import { Suspense } from "react";
-import Header from "@/components/Header";
-import Search from "@/components/Search";
 import ContactModal from "@/components/ContactModal";
 
 export default async function Page() {
@@ -30,8 +28,8 @@ export default async function Page() {
         <div className="flex flex-wrap items-center justify-center mt-3 -m-3 flex-3 h-content grow">
           {cards.map((card) => (
             <Link href={card.link} key={card.link}>
-              <Card className="flex flex-col items-center justify-center w-64 h-64 m-3 bg-slate-100 hover:scale-105 transition duration-200">
-                <h2 className="text-3xl font-bold">{card.title}</h2>
+              <Card className="flex flex-col items-center justify-center w-32 h-32 lg:w-64 lg:h-64 m-3 bg-slate-100 hover:scale-105 transition duration-200">
+                <h2 className="text-md lg:text-3xl font-bold">{card.title}</h2>
               </Card>
             </Link>
           ))}

@@ -15,8 +15,8 @@ const Header = ({ posts }) => {
   return (
     <Card className="flex flex-row items-center justify-center w-full h-full">
       <div className="flex flex-col items-center justify-center w-1/2 h-full">
-        <h1 className="text-4xl font-bold">Christopher Andrews</h1>
-        <h2 className="text-2xl font-bold">Software Engineer</h2>
+        <h1 className="max-md:text-xl text-4xl font-bold">Christopher Andrews</h1>
+        <h2 className="max-md:text-sm text-2xl font-bold">Software Engineer</h2>
       </div>
       <div className="flex flex-col items-center justify-center w-1/2 h-full">
         {!pressed ? (
