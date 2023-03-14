@@ -14,7 +14,7 @@ const Search = ({ handleClick, posts }) => {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full ">
       <div className="flex flex-row justify-between items-between">
-        <h1 className="text-sm lg:text-3xl font-bold">Search</h1>
+        <h1 className="text-base lg:text-3xl font-mono font-bold">Search</h1>
         <div className="hover:scale-105 text-sm hover:cursor-pointer ">
           <XSquare size={10} onClick={handleClick} />
         </div>
