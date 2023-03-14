@@ -27,8 +27,8 @@ const Search = ({ handleClick, posts }) => {
           posts
             .filter(
               (post) =>
-                post.frontmatter.title.toLowerCase().includes(input) ||
-                post.frontmatter.description.toLowerCase().includes(input)
+                post.frontmatter.title.toLowerCase().includes(input.toLowerCase()) ||
+                post.frontmatter.description.toLowerCase().includes(input.toLowerCase())
             )
             .map((post) => (
               <Link href={`/blog/${post.slug}`} onClick={() => setInput("")}>
