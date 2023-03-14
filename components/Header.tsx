@@ -5,6 +5,7 @@ import Card from "./Card";
 import SearchBar from "./Search";
 import { Search } from "react-feather";
 import { useState } from "react";
+import Link from "next/link";
 
 const Header = ({ posts }) => {
   const [pressed, setPressed] = useState(false);
@@ -27,6 +28,18 @@ const Header = ({ posts }) => {
         ) : (
           <SearchBar handleClick={handleClick} posts={posts} />
         )}
+      </div>
+      <div className="flex flex-col items-center justify-center px-2 md:hidden">
+        <Link href="/blog" className="text-sm">
+          Blog
+        </Link>
+        <Link href="/projects" className="text-sm">
+          Projects
+          
+        </Link>
+        <Link href="/" className="text-sm">
+          Home
+        </Link>
       </div>
     </Card>
   );

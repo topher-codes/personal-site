@@ -35,9 +35,9 @@ const ProjectPage = () => {
       <h1 className="py-6 text-4xl font-bold">Projects</h1>
       <div className="flex flex-row flex-wrap items-center justify-center w-full h-full">
         {projects.map((project) => (
-          <Card key={project.title} className="w-1/3 p-6 m-6">
+          <Card key={project.title} className="md:w-1/3 w-3/4 p-6 m-6">
             <Image src={project.image} width={500} height={300} alt="Project" />
-            <h2 className="text-3xl font-bold text-slate-600">
+            <h2 className="md:text-3xl font-bold text-slate-600">
               {project.title}
             </h2>
             <p className="py-4">{project.description}</p>
