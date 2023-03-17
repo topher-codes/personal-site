@@ -15,6 +15,12 @@ const AboutPage = () => {
         height={1000}
         alt="my resume"
       />
+      <Image
+        src="/images/resume-3.png"
+        width={800}
+        height={1000}
+        alt="my resume"
+      />
     </div>
   );
 };
